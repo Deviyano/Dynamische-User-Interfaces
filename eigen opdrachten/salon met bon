@@ -1,0 +1,57 @@
+#from salon_data import *
+def intro():
+    print("Welkom bijPapi Gelato je mag alle smaken kiezen zolang het maar vanille ijs is.")
+
+def bolletjes():
+    bon={}
+    no_bol=True
+    while no_bol==True:
+        try:
+            aantal=int(input("Hoeveel bolletjes wilt u?: "))
+        except:
+            print("Sorry dat snap ik niet...")
+            continue
+        if aantal >= 1 and aantal <= 3:
+            bakje_hoorntje(aantal, bon)
+            return bon
+            break
+        if aantal >= 4 and aantal <=8: 
+            no_bol=False
+            print("Hier is uw bakje met ",aantal,"bolletje(s).")
+            bon[aantal]="bakje"
+            return bon
+            break
+        if aantal >= 8:
+            print("Sorry, zulke grotebakken hebben we niet")
+            continue
+
+def bakje_hoorntje(aantal:int, bon:dict):
+    opnieuw=True
+    while opnieuw==True:
+        keuze=input("Wilt u deze bolletjes in een hoorntje of bakje?: ")
+        if keuze == "hoorntje":
+            opnieuw=False
+            print("Hier is uw hoorntje met ",aantal,"bolletje(s).")
+            bon[aantal]="hoorntje"
+        if keuze == "bakje":
+            opnieuw=False
+            print("Hier is uw bakje met ",aantal,"bolletje(s).")
+            bon[aantal]="bakje"
+        else:
+            print("Sorry dat snap ik niet...")
+            continue
+
+def door_bestellen(bon:dict):
+    opnieuw=True
+    while opnieuw==True:
+        opnieuw=input("Wilt u nog meer bestellen? (ja/nee): ")
+        if opnieuw == "ja":
+            bolletjes()
+            break
+        if opnieuw == "nee":
+            print("Bedankt en tot ziens")
+            print(bon)
+            break
+        else:
+            print("Sorry dat snap ik niet...")
+            continue
