@@ -1,0 +1,30 @@
+.buttons{
+    margin: 20%;
+    background-image: url(images/bg0.jpg);
+    margin-top: 20px;
+    padding-bottom: 0%;
+    padding-right: 30%;
+    margin-right: 550px;
+    position: absolute;
+
+}
+body{
+    background-color: rgb(255, 255, 255);
+}
+#button1, #button2, #button3{
+    margin-top: 10px;
+    margin-left: 5px;
+    background-color: green;
+    width: 40px;
+    height: 40px;
+}
+#button1{
+    margin-left: 10px;
+}
+#fotos{
+    margin: 40%;
+    margin-left: 300%;
+    margin-top: 400px;
+    width: 80px;
+    height: 80px;
+}
